@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+
+const DATA = [
+  { id: "todo-0", name: "Start using this cool app" },
+];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App tasks={DATA} />
   </React.StrictMode>,
   document.getElementById('root')
 );
