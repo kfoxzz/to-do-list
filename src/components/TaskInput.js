@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, FormGroup, FormControl, Row, Col } from 'react-bootstrap';
+import TasksRemaining from "./TasksRemaining";
 
 export default function TaskInput(props) {
 
@@ -25,6 +26,11 @@ export default function TaskInput(props) {
                 </Col>
                 <Col>
                     <Button variant="info" type="submit">Add task</Button>
+                </Col>
+            </Row>
+            <Row className="mt-3">
+                <Col>
+                    <TasksRemaining tasksLeft={props.tasksLeft} />
                 </Col>
             </Row>
         </Form>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button, FormCheck, Row, Col } from 'react-bootstrap';
 
-
 export default function Todo(props) {
 
     const [completed, setCompleted] = useState(false);
@@ -24,7 +23,7 @@ export default function Todo(props) {
                 </Col>
                 <Col className="align-items-center">{props.name}</Col>
                 <Col xs="auto">
-                    <Button variant="secondary" as="input" type="button" value="Remove task" onClick={() => props.deleteTask(props.id)} />
+                    <Button variant="secondary" as="input" type="button" value="Remove task" onClick={() => props.deleteTask(props.id, completed)} />
                 </Col>
             </Row>
             <hr />
