@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button, FormGroup, FormControl, Row, Col } from 'react-bootstrap';
 import TasksRemaining from "./TasksRemaining";
+import 'animate.css/animate.css';
+import { Animated } from "react-animated-css";
 
 export default function TaskInput(props) {
 
@@ -19,13 +21,15 @@ export default function TaskInput(props) {
     return (
         <Form className="my-3" onSubmit={handleSubmit}>
             <Row className="justify-content-center">
-                <Col xs={8} lg={6}>
+                <Col xs={8}>
                     <FormGroup>
                         <FormControl placeholder="What do you need to do?" type="text" id="new-todo-input" name="text" value={name} onChange={handleChange}></FormControl>
                     </FormGroup>
                 </Col>
                 <Col>
-                    <Button variant="info" type="submit">Add task</Button>
+                    <div className="d-grid">
+                        <Button variant="info" type="submit">Add task</Button>
+                    </div>
                 </Col>
             </Row>
             <Row className="mt-3">

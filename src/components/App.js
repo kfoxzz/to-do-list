@@ -3,16 +3,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
 import Todo from './Todo';
 import TaskInput from './TaskInput';
-import { nanoid } from 'nanoid'
-import { Prev } from "react-bootstrap/esm/PageItem";
+import { nanoid } from 'nanoid';
+import FadeIn from "react-fade-in/lib/FadeIn";
+import 'animate.css/animate.css';
+import { Animated } from "react-animated-css";
 
 function App(props) {
 
   const [tasks, setTasks] = useState(props.tasks);
   const [tasksLeft, setTasksLeft] = useState(tasks.length);
 
+
   const taskList = tasks.map(task => (
-    <Todo id={task.id} name={task.name} key={task.id} deleteTask={deleteTask} completeTask={completeTask} incompleteTask={incompleteTask} />
+    <Todo id={task.id} name={task.name} key={task.id} deleteTask={deleteTask} completeTask={completeTask} incompleteTask={incompleteTask}/>
   ));
 
   function addTask(name) {
@@ -47,21 +50,25 @@ function App(props) {
 
   return (
     <>
-      <Jumbotron>
-        <Container className="py-2 mt-3">
-          <Row>
-            <Col>
-              <h1 className="display-4">To Do</h1>
-              <p>Maybe now I won't be lazy...</p>
-            </Col>
-          </Row>
-        </Container>
-      </Jumbotron>
+      <Animated animationIn="bounceInRight">
+        <Jumbotron>
+          <Container className="py-2 mt-3">
+            <Row>
+              <Col className="text-center">
+                <h1 className="display-4">To Do</h1>
+                <p>Maybe now I won't be lazy...</p>
+              </Col>
+            </Row>
+          </Container>
+        </Jumbotron>
+      </Animated>
 
-      <Container>
-        <TaskInput addTask={addTask} tasksLeft={tasksLeft} />
-        {(tasks.length > 0) ? taskList : <p><em>All tasks are complete - add another task to get started! (or take a break after accomplishing so much)</em></p>}
-      </Container>
+      <Animated animationIn="fadeInUpBig">
+        <Container className="text-center">
+          <TaskInput addTask={addTask} tasksLeft={tasksLeft} />
+            {(tasks.length > 0) ? taskList : <p><em>All tasks are complete - add another task to get started! (or take a break after accomplishing so much)</em></p>}
+        </Container>
+      </Animated>
     </>
   );
 }
