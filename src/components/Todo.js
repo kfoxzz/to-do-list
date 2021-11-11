@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Button, FormCheck, Row, Col } from 'react-bootstrap';
+import { Button, Row, Col } from 'react-bootstrap';
 import '../index.css';
-import FadeIn from 'react-fade-in/lib/FadeIn';
 import 'animate.css/animate.css';
 import { Animated } from "react-animated-css";
 
@@ -31,9 +30,8 @@ export default function Todo(props) {
             <div id={props.id} completed={completed}>
                 <Row className="my-3">
                     <Col xs="auto">
-                        {/* <FormCheck className="checkbox-xl" onClick={handleComplete}></FormCheck> */}
-                        <div class="form-check">
-                            <input class="form-check-input checkbox-xl" type="checkbox" onClick={handleComplete}></input>
+                        <div className="form-check">
+                            <input className="form-check-input checkbox-xl" type="checkbox" onClick={handleComplete}></input>
                         </div>
                     </Col>
                     <Col>{props.name}</Col>

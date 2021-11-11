@@ -4,7 +4,6 @@ import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
 import Todo from './Todo';
 import TaskInput from './TaskInput';
 import { nanoid } from 'nanoid';
-import FadeIn from "react-fade-in/lib/FadeIn";
 import 'animate.css/animate.css';
 import { Animated } from "react-animated-css";
 

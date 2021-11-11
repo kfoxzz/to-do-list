@@ -1,7 +1,6 @@
-import React, { useState, setState } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import 'animate.css/animate.css';
-import { Animated } from "react-animated-css";
 
 export default function TasksRemaining(props) {
 

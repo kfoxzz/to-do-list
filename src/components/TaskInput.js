@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Button, FormGroup, FormControl, Row, Col } from 'react-bootstrap';
 import TasksRemaining from "./TasksRemaining";
 import 'animate.css/animate.css';
-import { Animated } from "react-animated-css";
 
 export default function TaskInput(props) {
 
